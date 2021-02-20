@@ -13,12 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        switch (ExperimentConstant.testVersion) {
-            case ExperimentConstant.TEST_IN_ONE_TASK:
-            case ExperimentConstant.TEST_IN_TWO_TASK:
-                startActivity(new Intent(this, SecondActivity.class));
-                break;
-        }
+        startActivity(new Intent(this, SecondActivity.class));
     }
 
     @Override
