@@ -15,11 +15,8 @@ public class ThirdActivity extends AppCompatActivity {
 
         switch (ExperimentConstant.testVersion) {
             case ExperimentConstant.TEST_IN_ONE_TASK:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
             case ExperimentConstant.TEST_IN_TWO_TASK:
-                Intent i = new Intent(this, SecondActivity.class);
-                startActivity(i);
+                startActivity(new Intent(this, MainActivity.class));
                 break;
         }
     }
