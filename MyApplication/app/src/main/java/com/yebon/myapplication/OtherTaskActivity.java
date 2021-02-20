@@ -1,30 +1,32 @@
 package com.yebon.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class OtherTaskActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_other);
 
         switch (ExperimentConstant.testVersion) {
             case ExperimentConstant.TEST_IN_ONE_TASK:
+                // is not used.
+                break;
             case ExperimentConstant.TEST_IN_TWO_TASK:
-                startActivity(new Intent(this, SecondActivity.class));
+                startActivity(new Intent(this, ThirdActivity.class));
                 break;
         }
     }
 
     @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
+    protected void onDestroy() {
+        super.onDestroy();
 
-        Log.d(ExperimentConstant.TAG, "main : on new intent");
+        Log.d(ExperimentConstant.TAG, "other : on Destroy");
     }
 }
